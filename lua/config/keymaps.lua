@@ -5,6 +5,9 @@
 
 local map = vim.keymap.set
 
+-- Replaces selected text without losing what you yanked
+map("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked test" })
+
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
