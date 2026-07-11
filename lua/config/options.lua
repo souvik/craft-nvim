@@ -85,7 +85,7 @@ vim.opt.wildignorecase = true -- Case-insensitive tab completion in commands
 -- Cursor Settings
 vim.opt.guicursor = {
 	"n-v-c:block", -- Normal, Visual, Command-line
-	"i-ci-ve:block", -- Insert, Command-line Insert, Visual-exclusive
+	"i-ci-ve:ver25", -- Insert, Command-line Insert, Visual-exclusive
 	"r-cr:hor20", -- Replace, Command-line Replace
 	"o:hor50", -- Operator-pending
 	"a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor", -- All modes: blinking & highlight groups
