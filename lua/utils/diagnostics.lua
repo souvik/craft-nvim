@@ -1,8 +1,6 @@
 local M = {}
 
 M.setup = function()
-  vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Line diagnostics" })
-
   vim.diagnostic.config({
     signs = {
       active = true,
