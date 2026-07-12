@@ -5,5 +5,6 @@ return vim.tbl_deep_extend("force",
     explorer = require("config.snacks.explorer"),
     input = require("config.snacks.input"),
     notifier = require("config.snacks.notifier"),
+    picker = require("config.snacks.picker"),
   }
 )
