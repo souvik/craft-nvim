@@ -6,15 +6,14 @@ M.setup = function()
     update_in_insert = false,
     float = {
       border = "rounded",
-      source = "if_any",
+      source = "if_many",
     },
-    virtual_tax = {
+    virtual_text = {
       spacing = 2,
-      source = "if_any",
+      source = "if_many",
       prefix = '●',
     },
     signs = {
-      active = true,
       text = {
         [vim.diagnostic.severity.ERROR] = " ",
         [vim.diagnostic.severity.WARN] = " ",

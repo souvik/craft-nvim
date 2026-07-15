@@ -11,6 +11,7 @@ vim.opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
 vim.opt.wrap = false -- Don't wrap lines
 vim.opt.cmdheight = 1 -- Command line height
+vim.opt.laststatus = 3 -- Global statusline always spans full width
 vim.opt.spelllang = { "en" } -- Set language for spellchecking
 
 -- Tabbing / Indentation

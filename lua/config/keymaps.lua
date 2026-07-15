@@ -54,3 +54,6 @@ map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
 
 -- Clipboard
 map("n", "yy", '"+yy', { desc = "Copy current line to system clipboard" })
+
+-- Diagnostics
+map("n", "<leader>sd", vim.diagnostic.open_float, { desc = "Line diagnostic" })
