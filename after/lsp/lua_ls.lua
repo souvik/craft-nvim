@@ -1,5 +1,5 @@
---@type vim.lsp.config
 return {
+  ---@type lspconfig.settings.lua_ls
   settings = {
     Lua = {
       workspace = {

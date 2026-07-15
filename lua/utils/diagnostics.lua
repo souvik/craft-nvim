@@ -2,6 +2,17 @@ local M = {}
 
 M.setup = function()
   vim.diagnostic.config({
+    severity_sort = true,
+    update_in_insert = false,
+    float = {
+      border = "rounded",
+      source = "if_any",
+    },
+    virtual_tax = {
+      spacing = 2,
+      source = "if_any",
+      prefix = '●',
+    },
     signs = {
       active = true,
       text = {

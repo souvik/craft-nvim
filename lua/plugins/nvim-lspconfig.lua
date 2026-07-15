@@ -11,7 +11,19 @@ return {
       },
     },
   },
-  { "neovim/nvim-lspconfig" },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      {
+        "saghen/blink.cmp",
+        version = "1.*",
+        opts = {
+          signature = { enabled = true },
+        },
+        dependencies = { "rafamadriz/friendly-snippets" },
+      },
+    },
+  },
   {
     "mason-org/mason-lspconfig.nvim",
     dependencies = {
@@ -21,7 +33,6 @@ return {
     init = function()
       require("utils.diagnostics").setup()
     end,
-    opts = {},
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -38,7 +49,7 @@ return {
         "eslint",
         "prettier",
         "html",
-        "css-lsp",
+        "cssls",
         "yamlls",
         "jsonls",
       },
