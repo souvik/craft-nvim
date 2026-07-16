@@ -1,7 +1,6 @@
 return {
   -- Snacks Explorer keymaps
   { "<leader>e", function() Snacks.explorer() end, desc = "File explorer" },
-  { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command history" },
   -- Snacks Lazygit keymaps
   { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
   { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit: log view" },
@@ -10,6 +9,8 @@ return {
   { "<leader>ff", function() Snacks.picker.files() end, desc = "File picker" },
   { "<leader>fb", function() Snacks.picker.buffers() end, desc = "File buffer picker" },
   { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent file picker" },
+  { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command history" },
+  { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
 
   { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
   { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
@@ -35,6 +36,7 @@ return {
   { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
   { "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "C[a]lls Incoming" },
   { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "C[a]lls Outgoing" },
+
   { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
   { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
 }
