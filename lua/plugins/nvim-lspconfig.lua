@@ -52,6 +52,7 @@ return {
         "lua_ls",
         "stylua",
         "ruby_lsp",
+        "standardrb",
         "ts_ls",
         "eslint",
         "prettier",
