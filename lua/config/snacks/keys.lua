@@ -3,8 +3,6 @@ return {
   { "<leader>e", function() Snacks.explorer() end, desc = "File explorer" },
   -- Snacks Lazygit keymaps
   { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-  { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit: log view" },
-  { "<leader>gL", function() Snacks.lazygit.log_file() end, desc = "Lazygit: current file log" },
   -- Snacks Picker keymaps
   { "<leader>ff", function() Snacks.picker.files() end, desc = "File picker" },
   { "<leader>fb", function() Snacks.picker.buffers() end, desc = "File buffer picker" },

@@ -56,7 +56,8 @@ return {
       require("lualine").setup {
         options = {
           icons_enabled = true,
-          theme = "catppuccin-nvim", -- Set theme based on environment variable
+          globalstatus = true,
+          theme = "catppuccin-mocha", -- Set theme based on environment variable
           section_separators = { left = "", right = "" },
           component_separators = { left = "", right = "" },
           disabled_filetypes = { "alpha" },
@@ -71,7 +72,7 @@ return {
           lualine_z = { "progress" },
         },
         inactive_sections = {
-          lualine_a = { mode },
+          lualine_a = {},
           lualine_b = {},
           lualine_c = { { "filename", path = 0 } },
           lualine_x = { { "location", padding = 0 } },
