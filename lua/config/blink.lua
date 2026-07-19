@@ -1,12 +1,20 @@
 return {
-  keyword = "full",
+  keymap = {
+    preset = "default",
+  },
+  snippets = { preset = "luasnip" },
+  sources = {
+    default = { "lsp", "path", "buffer", "snippets" },
+  },
+  signature = { enabled = true },
   completion = {
+    keyword = { range = "full" },
     menu = {
       -- Automatically show completion menu
       auto_show = true,
 
       draw = {
-        columns = { { "kind_icon" }, { "label", "label_description", gap = 1 } },
+        columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 }, },
         treesitter = { "lsp" },
       }
     },

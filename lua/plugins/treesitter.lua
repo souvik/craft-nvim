@@ -7,7 +7,7 @@ return {
     build = ":TSUpdate",
     config = function()
       local ensure_installed = {
-        "ruby", "rust", "python",
+        "ruby", "embedded_template", "rust", "python",
         "typescript", "tsx", "javascript", "json",
         "html", "css", "scss", "bash", "dockerfile",
         "yaml", "zsh"

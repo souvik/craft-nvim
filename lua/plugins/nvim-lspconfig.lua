@@ -17,6 +17,7 @@ return {
       {
         "saghen/blink.cmp",
         version = "1.*",
+        dependencies = { "L3MON4D3/LuaSnip" },
         ---@module "blink.cmp"
         ---@type blink.cmp.Config
         opts = require("config.blink"),
@@ -29,6 +30,7 @@ return {
       { "mason-org/mason.nvim", opts = {} },
       { "neovim/nvim-lspconfig" },
     },
+    opts = {},
     init = function()
       require("utils.diagnostics").setup()
     end,
