@@ -17,10 +17,9 @@ return {
       {
         "saghen/blink.cmp",
         version = "1.*",
-        opts = {
-          signature = { enabled = true },
-        },
-        dependencies = { "rafamadriz/friendly-snippets" },
+        ---@module "blink.cmp"
+        ---@type blink.cmp.Config
+        opts = require("config.blink"),
       },
     },
   },
