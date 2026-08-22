@@ -58,4 +58,16 @@ return {
       },
     },
   },
+  {
+    "folke/lazydev.nvim",
+    ft = "lua",
+    opts = {
+      library = {
+        "~/.config/nvim",
+      },
+      enabled = function()
+        return vim.g.lazydev_enabled == nil and true or vim.g.lazydev_enabled
+      end,
+    },
+  },
 }
