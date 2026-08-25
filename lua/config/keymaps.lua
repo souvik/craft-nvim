@@ -4,6 +4,7 @@
 -- ========================================================
 
 local map = vim.keymap.set
+local path = require("utils.path")
 
 -- Replaces selected text without losing what you yanked
 map("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked test" })
@@ -51,6 +52,46 @@ map("n", "<leader>xq", function()
 end, { desc = "Quickfix List" })
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
+
+-- File paths
+-- Rebuilds the native <C-g> message. The built-in prints a `~`-relative name
+-- and offers no way to change that, so we print the project-relative one.
+map("n", "<C-g>", function()
+  local file = path.relative()
+  if not file then
+    return vim.api.nvim_echo({ { "[No Name]" } }, false, {})
+  end
+
+  local parts = { ('"%s"'):format(file) }
+  if vim.bo.modified then
+    table.insert(parts, "[Modified]")
+  end
+  if vim.bo.readonly then
+    table.insert(parts, "[RO]")
+  end
+
+  local lines = vim.api.nvim_buf_line_count(0)
+  local cursor = vim.api.nvim_win_get_cursor(0)[1]
+  table.insert(parts, ("%d line%s --%d%%--"):format(lines, lines == 1 and "" or "s", math.floor(cursor * 100 / lines)))
+
+  vim.api.nvim_echo({ { table.concat(parts, " ") } }, false, {})
+end, { desc = "File Info (Project Relative)" })
+
+local function copy(file, title)
+  if not file then
+    return vim.notify("Buffer has no file", vim.log.levels.WARN)
+  end
+  vim.fn.setreg("+", file)
+  vim.notify(file, vim.log.levels.INFO, { title = title })
+end
+
+map("n", "<leader>fp", function()
+  copy(path.relative(), "Copied Relative Path")
+end, { desc = "Copy Relative Path" })
+
+map("n", "<leader>fP", function()
+  copy(path.absolute(), "Copied Absolute Path")
+end, { desc = "Copy Absolute Path" })
 
 -- Diagnostics
 map("n", "<leader>sd", vim.diagnostic.open_float, { desc = "Line diagnostic" })

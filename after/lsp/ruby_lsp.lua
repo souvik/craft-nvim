@@ -44,6 +44,7 @@ return {
     local root = project_root()
     return vim.lsp.rpc.start(ruby_lsp_bin(root), dispatchers, { cwd = root })
   end,
+  ---@module "lspconfig"
   ---@type lspconfig.settings.ruby_lsp
   init_options = {
     formatter = "standardrb",
