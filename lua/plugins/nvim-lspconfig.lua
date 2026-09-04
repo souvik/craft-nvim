@@ -55,6 +55,8 @@ return {
         "cssls",
         "yamlls",
         "jsonls",
+        "helm-ls",
+        "kube-linter",
       },
     },
   },
