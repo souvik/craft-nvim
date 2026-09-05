@@ -71,5 +71,12 @@ return {
         return vim.g.lazydev_enabled == nil and true or vim.g.lazydev_enabled
       end,
     },
+    {
+      "qvalentin/helm-ls.nvim",
+      ft = "helm",
+      opts = {
+        -- leave empty or see below
+      },
+    },
   },
 }
