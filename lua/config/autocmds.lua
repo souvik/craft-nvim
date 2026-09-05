@@ -46,3 +46,30 @@ vim.api.nvim_create_user_command("FormatEnable", function(args)
     vim.b.disable_autoformat = false
   end
 end, { bang = true, desc = "Re-enable format on save (! = current buffer only)" })
+
+-- Commands to hide diagnostic virtual text (e.g. when a file has too many
+-- diagnostics). Pass a bang (!) to affect only the current buffer; without it
+-- the change is global. M.diagnostic.show() forces an immediate redraw so the
+-- change applies without moving the cursor.
+local function redraw_virtual_text()
+  vim.diagnostic.show()
+end
+
+vim.api.nvim_create_user_command("VirtualTextDisable", function(args)
+  if args.bang then
+    vim.b.diagnostic_virtual_text = false
+  else
+    vim.g.diagnostic_virtual_text = false
+  end
+  redraw_virtual_text()
+end, { bang = true, desc = "Hide diagnostic virtual text (! = current buffer only)" })
+
+vim.api.nvim_create_user_command("VirtualTextEnable", function(args)
+  if args.bang then
+    vim.b.diagnostic_virtual_text = nil
+  else
+    vim.g.diagnostic_virtual_text = nil
+    vim.b.diagnostic_virtual_text = nil
+  end
+  redraw_virtual_text()
+end, { bang = true, desc = "Show diagnostic virtual text (! = current buffer only)" })

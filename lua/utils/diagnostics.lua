@@ -8,11 +8,20 @@ M.setup = function()
       border = "rounded",
       source = "if_many",
     },
-    virtual_text = {
-      spacing = 2,
-      source = "if_many",
-      prefix = '●',
-    },
+    ---@return vim.diagnostic.Opts.VirtualText | boolean
+    virtual_text = function(_, bufnr)
+      if vim.g.diagnostic_virtual_text == false then
+        return false
+      end
+      if vim.b[bufnr].diagnostic_virtual_text == false then
+        return false
+      end
+      return {
+        spacing = 2,
+        source = "if_many",
+        prefix = '●',
+      }
+    end,
     signs = {
       text = {
         [vim.diagnostic.severity.ERROR] = " ",
