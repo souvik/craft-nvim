@@ -23,6 +23,9 @@ return {
   { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
   { "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
 
+  { "<leader>gp", function() Snacks.picker.gh_pr() end, desc = "Github pull request (open)" },
+  { "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, desc = "Github pull request (all)" },
+
   { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete current buffer" },
   { "<leader>bD", function() Snacks.bufdelete.all() end, desc = "Delete all buffers" },
   { "<leader>bo", function() Snacks.bufdelete.other() end, desc = "Delete all buffers except current" },
