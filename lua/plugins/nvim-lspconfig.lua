@@ -13,6 +13,9 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    config = function()
+      vim.lsp.enable("tsc")
+    end,
     dependencies = {
       {
         "saghen/blink.cmp",
@@ -30,7 +33,9 @@ return {
       { "mason-org/mason.nvim", opts = {} },
       { "neovim/nvim-lspconfig" },
     },
-    opts = {},
+    opts = {
+      automatic_enable = { exclude = { "ts_ls" } },
+    },
     init = function()
       require("utils.diagnostics").setup()
     end,
@@ -48,7 +53,6 @@ return {
         "stylua",
         "ruby_lsp",
         "standardrb",
-        "ts_ls",
         "eslint",
         "prettier",
         "html",
