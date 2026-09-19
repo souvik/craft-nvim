@@ -33,9 +33,7 @@ return {
       { "mason-org/mason.nvim", opts = {} },
       { "neovim/nvim-lspconfig" },
     },
-    opts = {
-      automatic_enable = { exclude = { "ts_ls" } },
-    },
+    opts = {},
     init = function()
       require("utils.diagnostics").setup()
     end,
@@ -55,6 +53,7 @@ return {
         "standardrb",
         "eslint",
         "prettier",
+        "typescript-language-server",
         "html",
         "cssls",
         "yamlls",
